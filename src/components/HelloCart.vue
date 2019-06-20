@@ -1,10 +1,11 @@
 <template>
   <div>
-    <div v-if="me && me.activeCart">
+    <div v-if="cartIsNotEmpty">
       <div v-for="lineItem in me.activeCart.lineItems"
            :key="lineItem.id">
         {{ lineItem.quantity }} x {{ lineItem.name }}
       </div>
+      <button @click="placeOrder">Place order</button>
     </div>
   </div>
 </template>
@@ -15,6 +16,12 @@
   export default {
     name: "HelloCart",
 
+    computed: {
+      cartIsNotEmpty() {
+        return this.me && this.me.activeCart && this.me.activeCart.lineItems.length;
+      }
+    },
+
     apollo: {
       me: {
         query: gql`
@@ -22,6 +29,7 @@
           me {
             activeCart {
               id
+              version
               lineItems {
                 id
                 name(locale: "en")
@@ -30,6 +38,27 @@
             }
           }
         }`,
+      },
+    },
+
+    methods: {
+      placeOrder() {
+        return this.$apollo.mutate({
+          mutation: gql`
+          mutation ($id: String!, $version: Long!) {
+            createMyOrderFromCart(draft: {
+              id: $id
+              version: $version
+            }) {
+              id
+            }
+          }`,
+          variables: {
+            id: this.me.activeCart.id,
+            version: this.me.activeCart.version,
+          },
+          refetchQueries: ['me'],
+        })
       }
     }
   }

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
+import gql from 'graphql-tag';
 import SdkAuth, { TokenProvider } from '@commercetools/sdk-auth';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
@@ -14,12 +15,12 @@ let storedTokenInfo;
 const tokenProvider = new TokenProvider({
   sdkAuth: new SdkAuth({
     host: 'https://auth.commercetools.com',
-    projectKey: 'sunrise-spa',
+    projectKey: 'graphql-webinar',
     credentials: {
-      clientId: 'Cie7e2JpX5Z0bUzzQUkhAuZh',
-      clientSecret: 'QhgNoWJFjKjNSf3Z3MriUulzjGH74MEj',
+      clientId: 'is9ea6eVSatpeUSplttICYik',
+      clientSecret: 'VifeyXjhHLi3ZWSH1w1XK31vj9wOz9td',
     },
-    scopes: ['view_products:sunrise-spa', 'manage_my_orders:sunrise-spa'],
+    scopes: ['view_products:graphql-webinar', 'manage_my_orders:graphql-webinar'],
   }),
   fetchTokenInfo: sdkAuth => sdkAuth.anonymousFlow(),
   onTokenInfoChanged: tokenInfo => localStorage.setItem(tokenInfoStorageName, JSON.stringify(tokenInfo)),
@@ -42,7 +43,7 @@ function createClient() {
     .then(authorization => ({ headers: { ...headers, authorization } })));
 
   const { apolloClient, wsClient } = createApolloClient({
-    httpEndpoint: 'https://api.commercetools.com/sunrise-spa/graphql',
+    httpEndpoint: 'https://api.commercetools.com/graphql-webinar/graphql',
     cache: new InMemoryCache(),
     link: authLink,
   });
@@ -59,4 +60,19 @@ const apolloProvider = new VueApollo({
     console.error(error);
   },
 });
+
+// VERY VERY BAD PRACTICE, JUST FOR DEMO PURPOSES!!
+apolloProvider.defaultClient.mutate({
+  mutation: gql`
+  mutation {
+    createMyCart(draft: {
+      currency: "EUR"
+      shippingAddress: { country: "DE" }
+    }) {
+      id
+    }
+  }`,
+  refetchQueries: ['me'],
+});
+
 export default apolloProvider;

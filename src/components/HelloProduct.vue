@@ -20,15 +20,15 @@
           mutation ($id: String!, $version: Long!, $productId: String!) {
             updateMyCart(id: $id, version: $version, actions: {
               addLineItem: {
-                productId: $productId,
+                productId: $productId
               }
             }) {
               id
               version
               lineItems {
                 id
-                quantity
                 name(locale: "en")
+                quantity
               }
             }
           }`,
@@ -68,17 +68,6 @@
             }
           }
         }`,
-      }
-    },
-
-    watch: {
-      me(newValue, oldValue) {
-        if (!oldValue && !newValue.activeCart) {
-          return this.$apollo.mutate({
-            mutation: gql`mutation { createMyCart(draft: { currency: "EUR" }) { id version } }`,
-            refetchQueries: ['me'],
-          });
-        }
       }
     },
   }
