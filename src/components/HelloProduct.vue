@@ -13,34 +13,6 @@
   import gql from 'graphql-tag';
 
   export default {
-    methods: {
-      addLineItem(productId) {
-        return this.$apollo.mutate({
-          mutation: gql`
-          mutation ($id: String!, $version: Long!, $productId: String!) {
-            updateMyCart(id: $id, version: $version, actions: {
-              addLineItem: {
-                productId: $productId
-              }
-            }) {
-              id
-              version
-              lineItems {
-                id
-                name(locale: "en")
-                quantity
-              }
-            }
-          }`,
-          variables: {
-            id: this.me.activeCart.id,
-            version: this.me.activeCart.version,
-            productId,
-          },
-        });
-      },
-    },
-
     apollo: {
       products: {
         query: gql`
@@ -69,6 +41,34 @@
           }
         }`,
       }
+    },
+
+    methods: {
+      addLineItem(productId) {
+        return this.$apollo.mutate({
+          mutation: gql`
+          mutation ($id: String!, $version: Long!, $productId: String!) {
+            updateMyCart(id: $id, version: $version, actions: {
+              addLineItem: {
+                productId: $productId
+              }
+            }) {
+              id
+              version
+              lineItems {
+                id
+                name(locale: "en")
+                quantity
+              }
+            }
+          }`,
+          variables: {
+            id: this.me.activeCart.id,
+            version: this.me.activeCart.version,
+            productId,
+          },
+        });
+      },
     },
   }
 </script>

@@ -53,26 +53,28 @@ function createClient() {
   return apolloClient;
 }
 
-const apolloProvider = new VueApollo({
-  defaultClient: createClient(),
-  errorHandler(error) {
-    // eslint-disable-next-line no-console
-    console.error(error);
-  },
-});
+export function createProvider() {
+  const apolloProvider = new VueApollo({
+    defaultClient: createClient(),
+    errorHandler(error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
+    },
+  });
 
-// VERY VERY BAD PRACTICE, JUST FOR DEMO PURPOSES!!
-apolloProvider.defaultClient.mutate({
-  mutation: gql`
-  mutation {
-    createMyCart(draft: {
-      currency: "EUR"
-      shippingAddress: { country: "DE" }
-    }) {
-      id
-    }
-  }`,
-  refetchQueries: ['me'],
-});
+  // VERY VERY BAD PRACTICE, JUST FOR DEMO PURPOSES!!
+  apolloProvider.defaultClient.mutate({
+    mutation: gql`
+      mutation {
+        createMyCart(draft: {
+          currency: "EUR"
+          shippingAddress: { country: "DE" }
+        }) {
+          id
+        }
+      }`,
+    refetchQueries: ['me'],
+  });
 
-export default apolloProvider;
+  return apolloProvider;
+}
