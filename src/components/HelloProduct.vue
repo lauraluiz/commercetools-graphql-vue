@@ -4,15 +4,17 @@
     <div v-for="product in products.results"
          :key="product.id">
       {{ product.masterData.current.name }}
-      <button @click="addLineItem(product.id)">Add</button>
+      <AddToCart :product-id="product.id"/>
     </div>
   </div>
 </template>
 
 <script>
   import gql from 'graphql-tag';
+  import AddToCart from './AddToCart';
 
   export default {
+    components: {AddToCart},
     apollo: {
       products: {
         query: gql`
@@ -29,45 +31,6 @@
             }
           }
         }`,
-      },
-      me: {
-        query: gql`
-        query me {
-          me {
-            activeCart {
-              id
-              version
-            }
-          }
-        }`,
-      }
-    },
-
-    methods: {
-      addLineItem(productId) {
-        return this.$apollo.mutate({
-          mutation: gql`
-          mutation ($id: String!, $version: Long!, $productId: String!) {
-            updateMyCart(id: $id, version: $version, actions: {
-              addLineItem: {
-                productId: $productId
-              }
-            }) {
-              id
-              version
-              lineItems {
-                id
-                name(locale: "en")
-                quantity
-              }
-            }
-          }`,
-          variables: {
-            id: this.me.activeCart.id,
-            version: this.me.activeCart.version,
-            productId,
-          },
-        });
       },
     },
   }

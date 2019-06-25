@@ -5,6 +5,7 @@
            :key="lineItem.id">
         {{ lineItem.quantity }} x {{ lineItem.name }}
       </div>
+      <div>{{ totalPrice }} €</div>
       <button @click="placeOrder">Place order</button>
     </div>
   </div>
@@ -19,6 +20,10 @@
     computed: {
       cartIsNotEmpty() {
         return this.me && this.me.activeCart && this.me.activeCart.lineItems.length;
+      },
+
+      totalPrice() {
+        return this.me.activeCart.totalPrice.centAmount / 100;
       }
     },
 
@@ -34,6 +39,10 @@
                 id
                 name(locale: "en")
                 quantity
+              }
+              totalPrice {
+                currencyCode
+                centAmount
               }
             }
           }
