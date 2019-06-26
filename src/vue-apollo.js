@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueApollo from 'vue-apollo';
-import gql from 'graphql-tag';
 import SdkAuth, { TokenProvider } from '@commercetools/sdk-auth';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { setContext } from 'apollo-link-context';
@@ -12,9 +11,11 @@ Vue.use(VueApollo);
 const tokenInfoStorageName = 'token';
 let storedTokenInfo;
 
+// JUST FOR DEMO PURPOSES!
+// best practice would be to put the credentials in an external configuration file
 const tokenProvider = new TokenProvider({
   sdkAuth: new SdkAuth({
-    host: 'https://auth.commercetools.com',
+    host: 'https://auth.sphere.io',
     projectKey: 'graphql-webinar',
     credentials: {
       clientId: 'is9ea6eVSatpeUSplttICYik',
@@ -43,7 +44,7 @@ function createClient() {
     .then(authorization => ({ headers: { ...headers, authorization } })));
 
   const { apolloClient, wsClient } = createApolloClient({
-    httpEndpoint: 'https://api.commercetools.com/graphql-webinar/graphql',
+    httpEndpoint: 'https://api.sphere.io/graphql-webinar/graphql',
     cache: new InMemoryCache(),
     link: authLink,
   });
@@ -54,27 +55,11 @@ function createClient() {
 }
 
 export function createProvider() {
-  const apolloProvider = new VueApollo({
+  return new VueApollo({
     defaultClient: createClient(),
     errorHandler(error) {
       // eslint-disable-next-line no-console
       console.error(error);
     },
   });
-
-  // VERY VERY BAD PRACTICE, JUST FOR DEMO PURPOSES!!
-  apolloProvider.defaultClient.mutate({
-    mutation: gql`
-      mutation {
-        createMyCart(draft: {
-          currency: "EUR"
-          shippingAddress: { country: "DE" }
-        }) {
-          id
-        }
-      }`,
-    refetchQueries: ['me'],
-  });
-
-  return apolloProvider;
 }

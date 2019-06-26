@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <HelloCart id="cart"/>
-    <HelloProduct id="products"/>
+    <Cart id="cart"/>
+    <Products id="products"/>
   </div>
 </template>
 
 <script>
-import HelloProduct from './components/HelloProduct.vue'
-import HelloCart from './components/HelloCart.vue'
+import Products from './components/Products.vue'
+import Cart from './components/Cart.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloProduct,
-    HelloCart,
+    Products,
+    Cart,
   }
 }
 </script>
@@ -26,6 +26,7 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  padding-right: 100px;
 }
 
 #cart {

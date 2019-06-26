@@ -53,5 +53,24 @@
         });
       },
     },
+
+    // JUST FOR DEMO PURPOSES!
+    // best practice would be to create the cart only when adding a product
+    watch: {
+      me(value) {
+        if (!value.activeCart) {
+          this.$apollo.mutate({
+            mutation: gql`
+            mutation {
+              createMyCart(draft: {
+                currency: "EUR"
+                shippingAddress: { country: "DE" }
+              }) { id }
+            }`,
+            refetchQueries: ['me']
+          });
+        }
+      }
+    }
   }
 </script>

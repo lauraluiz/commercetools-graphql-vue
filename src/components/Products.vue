@@ -1,6 +1,6 @@
 <template>
   <div v-if="products">
-    <u>{{ products.total }} total products</u>
+    <p>Total products: {{ products.total }}</p>
     <div v-for="product in products.results"
          :key="product.id">
       {{ product.masterData.current.name }}
@@ -18,7 +18,7 @@
     apollo: {
       products: {
         query: gql`
-        query products {
+        {
           products(limit: 10) {
             total
             results {

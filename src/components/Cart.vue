@@ -15,8 +15,6 @@
   import gql from 'graphql-tag';
 
   export default {
-    name: "HelloCart",
-
     computed: {
       cartIsNotEmpty() {
         return this.me && this.me.activeCart && this.me.activeCart.lineItems.length;
