@@ -3,8 +3,8 @@
     <p>Total products: {{ products.total }}</p>
     <div v-for="product in products.results"
          :key="product.id">
-      {{ product.masterData.current.name }}
       <AddToCart :product-id="product.id"/>
+      {{ product.masterData.current.name }}
     </div>
   </div>
 </template>

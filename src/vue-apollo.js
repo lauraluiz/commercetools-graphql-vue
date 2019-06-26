@@ -1,65 +1,37 @@
-import Vue from 'vue';
-import VueApollo from 'vue-apollo';
-import SdkAuth, { TokenProvider } from '@commercetools/sdk-auth';
-import { InMemoryCache } from 'apollo-cache-inmemory';
+import Vue from 'vue'
+import VueApollo from 'vue-apollo'
+import { createApolloClient } from 'vue-cli-plugin-apollo/graphql-client'
 import { setContext } from 'apollo-link-context';
-import { createApolloClient } from 'vue-cli-plugin-apollo/graphql-client';
+import SdkAuth, { TokenProvider } from '@commercetools/sdk-auth';
 
 // Install the vue plugin
 Vue.use(VueApollo);
 
-const tokenInfoStorageName = 'token';
-let storedTokenInfo;
-
-// JUST FOR DEMO PURPOSES!
-// best practice would be to put the credentials in an external configuration file
+// Create token provider for the commercetools project
 const tokenProvider = new TokenProvider({
   sdkAuth: new SdkAuth({
     host: 'https://auth.sphere.io',
     projectKey: 'graphql-webinar',
     credentials: {
-      clientId: 'is9ea6eVSatpeUSplttICYik',
-      clientSecret: 'VifeyXjhHLi3ZWSH1w1XK31vj9wOz9td',
+      clientId: 'EepIOtr0P2evGfeWCAh48qIs',
+      clientSecret: 'nCmLN6J5bCSx0ZoicI5GpoyibjnUDnHk',
     },
-    scopes: ['view_products:graphql-webinar', 'manage_my_orders:graphql-webinar'],
+    scopes: ['manage_my_orders:graphql-webinar', 'view_products:graphql-webinar'],
   }),
   fetchTokenInfo: sdkAuth => sdkAuth.anonymousFlow(),
-  onTokenInfoChanged: tokenInfo => localStorage.setItem(tokenInfoStorageName, JSON.stringify(tokenInfo)),
-}, storedTokenInfo);
+});
 
-const buildAuthorizationHeader = () => tokenProvider.getTokenInfo()
-  .then(tokenInfo => `${tokenInfo.token_type} ${tokenInfo.access_token}`);
-
-function getAuthToken() {
-  return buildAuthorizationHeader().catch((error) => {
-    // eslint-disable-next-line no-console
-    console.warn('Could not connect to commercetools, cleaning up session...', error);
-    localStorage.removeItem(tokenInfoStorageName);
-    return buildAuthorizationHeader();
-  });
-}
-
-function createClient() {
-  const authLink = setContext((_, { headers = {} }) => getAuthToken()
+// Call this in the Vue app file
+export function createProvider() {
+  const authLink = setContext((_, { headers = {} }) => tokenProvider.getTokenInfo()
+    .then(tokenInfo => `${tokenInfo.token_type} ${tokenInfo.access_token}`)
     .then(authorization => ({ headers: { ...headers, authorization } })));
 
-  const { apolloClient, wsClient } = createApolloClient({
+  const { apolloClient } = createApolloClient({
     httpEndpoint: 'https://api.sphere.io/graphql-webinar/graphql',
-    cache: new InMemoryCache(),
     link: authLink,
+    inMemoryCacheOptions: { freezeResults: false }
   });
 
-  apolloClient.wsClient = wsClient;
-
-  return apolloClient;
-}
-
-export function createProvider() {
-  return new VueApollo({
-    defaultClient: createClient(),
-    errorHandler(error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-    },
-  });
+  return new VueApollo({ defaultClient: apolloClient });
 }

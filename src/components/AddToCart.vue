@@ -40,7 +40,6 @@
                 quantity
               }
               totalPrice {
-                currencyCode
                 centAmount
               }
             }
