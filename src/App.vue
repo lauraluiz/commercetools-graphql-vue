@@ -25,7 +25,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-  padding-right: 100px;
+  padding: 0 100px;
 }
 
 #cart {
