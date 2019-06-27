@@ -23,7 +23,8 @@
     },
 
     methods: {
-      addLineItem() {
+      async addLineItem() {
+        const cart = this.me.activeCart ? this.me.activeCart : await this.createCart();
         return this.$apollo.mutate({
           mutation: gql`
           mutation ($id: String!, $version: Long!, $productId: String!) {
@@ -45,31 +46,28 @@
             }
           }`,
           variables: {
-            id: this.me.activeCart.id,
-            version: this.me.activeCart.version,
+            id: cart.id,
+            version: cart.version,
             productId: this.productId,
           },
         });
       },
-    },
 
-    // JUST FOR DEMO PURPOSES!
-    // best practice would be to create the cart only when adding a product
-    watch: {
-      me(value) {
-        if (!value.activeCart) {
-          this.$apollo.mutate({
-            mutation: gql`
+      createCart() {
+        return this.$apollo.mutate({
+          mutation: gql`
             mutation {
               createMyCart(draft: {
                 currency: "EUR"
                 shippingAddress: { country: "DE" }
-              }) { id }
+              }) {
+                id
+                version
+              }
             }`,
-            refetchQueries: ['me']
-          });
-        }
+          refetchQueries: ['me']
+        }).then(result => result.data.createMyCart);
       }
-    }
+    },
   }
 </script>

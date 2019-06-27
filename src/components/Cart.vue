@@ -6,15 +6,17 @@
         {{ lineItem.quantity }} x {{ lineItem.name }}
       </div>
       <div>{{ totalPrice }} €</div>
-      <button @click="placeOrder">Place order</button>
+      <PlaceOrder :cart="me.activeCart"/>
     </div>
   </div>
 </template>
 
 <script>
   import gql from 'graphql-tag';
+  import PlaceOrder from './PlaceOrder';
 
   export default {
+    components: { PlaceOrder },
     computed: {
       cartIsNotEmpty() {
         return this.me && this.me.activeCart && this.me.activeCart.lineItems.length;
@@ -46,26 +48,5 @@
         }`,
       },
     },
-
-    methods: {
-      placeOrder() {
-        return this.$apollo.mutate({
-          mutation: gql`
-          mutation ($id: String!, $version: Long!) {
-            createMyOrderFromCart(draft: {
-              id: $id
-              version: $version
-            }) {
-              id
-            }
-          }`,
-          variables: {
-            id: this.me.activeCart.id,
-            version: this.me.activeCart.version,
-          },
-          refetchQueries: ['me'],
-        })
-      }
-    }
   }
 </script>

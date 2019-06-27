@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <Cart id="cart"/>
-    <Products id="products"/>
+    <Cart class="cart"/>
+    <Products class="products"/>
+    <Cart class="cart"/>
   </div>
 </template>
 
@@ -25,14 +26,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
-  padding: 0 100px;
 }
 
-#cart {
+.cart {
   float:right;
+  padding: 0 100px 50px;
 }
 
-#products {
+.products {
   float: left;
+  padding: 0 100px;
 }
 </style>
