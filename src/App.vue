@@ -2,7 +2,6 @@
   <div id="app">
     <Cart class="cart"/>
     <Products class="products"/>
-    <Cart class="cart"/>
   </div>
 </template>
 
