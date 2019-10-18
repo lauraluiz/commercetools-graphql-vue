@@ -8,7 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@commercetools/sdk-auth": "2.1.5",
+    "@commercetools/sdk-auth": "3.0.0",
     "core-js": "2.6.10",
     "vue": "2.6.10",
     "vue-apollo": "3.0.0-rc.7"
