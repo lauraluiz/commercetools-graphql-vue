@@ -29,11 +29,8 @@ yarn run lint
 
 This is the setup that was used to create and connect this project to commercetools GraphQL API.
 
-### Requirements
-- [Vue CLI](https://github.com/vuejs/vue-cli) installed
-
 ### Steps
-Create project with Vue CLI (default settings)
+Create project with [Vue CLI](https://github.com/vuejs/vue-cli) (default settings)
 ```
 vue create commercetools-graphql-vue
 ```
