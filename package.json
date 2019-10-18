@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@commercetools/sdk-auth": "2.1.5",
-    "core-js": "2.6.9",
+    "core-js": "2.6.10",
     "vue": "2.6.10",
     "vue-apollo": "3.0.0-beta.30"
   },
