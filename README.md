@@ -1,4 +1,4 @@
-# GraphQL webinar
+# commercetools GraphQL Vue.js
 
 ## Requirements
 - [Yarn](https://yarnpkg.com/en/) installed
@@ -18,11 +18,6 @@ yarn run serve
 Compiles and minifies for production
 ```
 yarn run build
-```
-
-Lints and fixes files
-```
-yarn run lint
 ```
 
 ## How to re-create this project
