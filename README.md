@@ -1,5 +1,7 @@
 # commercetools GraphQL Vue.js
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c48dc8e1-1cf6-48e9-b037-dd40527ab679/deploy-status)](https://app.netlify.com/sites/commercetools-graphql-vue/deploys)
+
 ## Requirements
 - [Yarn](https://yarnpkg.com/en/) installed
 
