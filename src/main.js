@@ -1,10 +1,14 @@
 import Vue from 'vue'
+import VueApollo from 'vue-apollo'
+import apolloClient  from './vue-apollo'
 import App from './App.vue'
-import { createProvider } from './vue-apollo'
 
-Vue.config.productionTip = false
+// Install the vue plugin
+Vue.use(VueApollo);
+
+Vue.config.productionTip = false;
 
 new Vue({
-  apolloProvider: createProvider(),
+  apolloProvider: new VueApollo({ defaultClient: apolloClient }),
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
