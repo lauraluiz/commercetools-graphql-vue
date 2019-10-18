@@ -14,9 +14,9 @@
     "vue-apollo": "3.0.0-rc.7"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "3.8.0",
-    "@vue/cli-plugin-eslint": "3.8.0",
-    "@vue/cli-service": "3.8.0",
+    "@vue/cli-plugin-babel": "3.12.1",
+    "@vue/cli-plugin-eslint": "3.12.1",
+    "@vue/cli-service": "3.12.1",
     "babel-eslint": "10.0.3",
     "eslint": "5.16.0",
     "eslint-plugin-vue": "5.2.3",
