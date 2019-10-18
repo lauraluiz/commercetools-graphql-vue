@@ -61,7 +61,7 @@ export function createProvider() {
 }
 ```
 
-Now you can create GraphQL queries and mutations in any Vue component. 
+Now you can create GraphQL queries and mutations to commercetools in any Vue component. 
 
 
 
