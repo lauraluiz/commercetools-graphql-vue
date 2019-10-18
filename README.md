@@ -8,12 +8,12 @@
 
 Create project with Vue CLI (default settings)
 ```
-vue create webinar
+vue create commercetools-graphql-vue
 ```
 
 Add apollo as dependency (default options)
 ```
-cd webinar
+cd commercetools-graphql-vue
 vue add apollo
 ```
 Install commercetools Auth SDK
