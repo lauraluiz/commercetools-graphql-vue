@@ -1,11 +1,38 @@
 # GraphQL webinar
 
 ## Requirements
-- [Vue CLI](https://github.com/vuejs/vue-cli) installed
 - [Yarn](https://yarnpkg.com/en/) installed
 
-## Step by step
+## Commands
 
+Project setup
+```
+yarn install
+```
+
+Compiles and hot-reloads for development
+```
+yarn run serve
+```
+
+Compiles and minifies for production
+```
+yarn run build
+```
+
+Lints and fixes files
+```
+yarn run lint
+```
+
+## How to re-create this project
+
+This is the setup that was used to create and connect this project to commercetools GraphQL API.
+
+### Requirements
+- [Vue CLI](https://github.com/vuejs/vue-cli) installed
+
+### Steps
 Create project with Vue CLI (default settings)
 ```
 vue create commercetools-graphql-vue
@@ -62,28 +89,3 @@ export function createProvider() {
 ```
 
 Now you can create GraphQL queries and mutations to commercetools in any Vue component. 
-
-
-
-## Project setup
-```
-yarn install
-```
-
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
