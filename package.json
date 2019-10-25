@@ -11,7 +11,7 @@
     "@commercetools/sdk-auth": "3.0.1",
     "core-js": "3.3.2",
     "vue": "2.6.10",
-    "vue-apollo": "3.0.0-rc.7"
+    "vue-apollo": "3.0.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.0.4",
