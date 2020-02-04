@@ -20,7 +20,7 @@
     "babel-eslint": "10.0.3",
     "eslint": "5.16.0",
     "eslint-plugin-vue": "6.1.2",
-    "graphql-tag": "2.10.1",
+    "graphql-tag": "2.10.2",
     "vue-cli-plugin-apollo": "0.21.3",
     "vue-template-compiler": "2.6.11"
   },
