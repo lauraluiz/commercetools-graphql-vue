@@ -1426,10 +1426,10 @@
     lodash.kebabcase "^4.1.1"
     svg-tags "^1.0.0"
 
-"@vue/babel-preset-app@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-4.2.1.tgz#3407bbb2075390c9c710cf0379330ccd9c16d0bc"
-  integrity sha512-p3+d96qMGJl+3m+beofL7yPDpUcAM+WtvvSh2zh6KMZ0oVeN4jADySdzPIXVbyusuFzcjnOZACjWlMcoNdrK3Q==
+"@vue/babel-preset-app@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/babel-preset-app/-/babel-preset-app-4.2.2.tgz#c7a0a685a5eb92e1b1538f8d1fc4f5ac00dccec1"
+  integrity sha512-QGgL+iR+ZdNO9xcFJqYjg938bwjArgIyNOFfM0m+dNSOt7wWVrlFA2v0C6aVN1sJ+IEjdurEolBTZ7hXp6Fbsg==
   dependencies:
     "@babel/core" "^7.8.4"
     "@babel/helper-compilation-targets" "^7.8.4"
@@ -1493,59 +1493,59 @@
     "@vue/babel-plugin-transform-vue-jsx" "^1.1.2"
     camelcase "^5.0.0"
 
-"@vue/cli-overlay@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.2.1.tgz#669184fee4e992c04fe71917d02d75a7dd49df5f"
-  integrity sha512-3lOqL71fdHBH8idt+A8SRhlBVJ1BhNAeJaVnC88+OCh4WYGidc95JGLE1fZIexTiV2AWmr9Bpn22C0hzcFWBJA==
+"@vue/cli-overlay@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-overlay/-/cli-overlay-4.2.2.tgz#43184ab5b7bc491cac46e3c3e375ec4976fbea5f"
+  integrity sha512-6hMYDkH/rSzFkSKuu/EfTXVkUaBDR6sq5vJ161pN1q46zUB5uN1L7rJHQDjxTy1EZazk1MqU5cS10vRVhIeWvw==
 
-"@vue/cli-plugin-babel@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.2.1.tgz#ddaf6df0c4c129937645d408c765942c8d57f06d"
-  integrity sha512-QTbYbJzwIszXwFuqHs2yJMGyly5Q/seJC8BUOABbh2O94X3bmA/9nKmQ6qkpjqrekL9IDKXOcwywgr4GrD+O0A==
+"@vue/cli-plugin-babel@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-babel/-/cli-plugin-babel-4.2.2.tgz#c65cad9921713b9233bab49306559c553a78ee1d"
+  integrity sha512-uCXDlgUp4ehHoYosr6kbyJYeQ+aQ4lR9Zn0Bf58MFbZbmjBCi8dBKzQf7ve4bo8L8CTGjWirnzgA7pStRmWx0g==
   dependencies:
     "@babel/core" "^7.8.4"
-    "@vue/babel-preset-app" "^4.2.1"
-    "@vue/cli-shared-utils" "^4.2.1"
+    "@vue/babel-preset-app" "^4.2.2"
+    "@vue/cli-shared-utils" "^4.2.2"
     babel-loader "^8.0.6"
     cache-loader "^4.1.0"
     thread-loader "^2.1.3"
     webpack "^4.0.0"
 
-"@vue/cli-plugin-eslint@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.2.1.tgz#aeb8bf8db0e65eec2136a3518ade757388e2ecd3"
-  integrity sha512-toES0xMAtdwe/iG1dG7BXo/8OWhBp4pQ/7uBGoXa4I1LpDM60PN8Bv5IuC6kope+xlOF/6h4iUWfmvElNujUeg==
+"@vue/cli-plugin-eslint@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-eslint/-/cli-plugin-eslint-4.2.2.tgz#ea0ecfc3f816102f61df3050d82f23909aa3df1b"
+  integrity sha512-C6Foeq+XjsAMy+F9XTXGUtCKBgTJXGRjqUdmehU5J4i84erSIRulOahqjHr6J6IslJcDAmBekF8xXhMzX839NA==
   dependencies:
-    "@vue/cli-shared-utils" "^4.2.1"
+    "@vue/cli-shared-utils" "^4.2.2"
     eslint-loader "^2.1.2"
     globby "^9.2.0"
     inquirer "^6.3.1"
     webpack "^4.0.0"
     yorkie "^2.0.0"
 
-"@vue/cli-plugin-router@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-router/-/cli-plugin-router-4.2.1.tgz#4e133c2f43ace0319401ab636a1aa632c4614ff9"
-  integrity sha512-/GLeF0qGb/AxRbqvly+PtWwwKz9uvMFOq1rDE7kKrwBl91QZT4oUjDiyzc8hwCM931oiHo+MHDLYM9PySBDfgg==
+"@vue/cli-plugin-router@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-router/-/cli-plugin-router-4.2.2.tgz#2e510668341e3d2ff839a7b6a76e1250e1734223"
+  integrity sha512-F6uYaKKpXXgub9vd3QFNS673HIXB8+U2XGtLp7yUo00/iuLWodrzPE1zLk6i/R6o/MCtDU6Tqfow/fFeIFVLZg==
   dependencies:
-    "@vue/cli-shared-utils" "^4.2.1"
+    "@vue/cli-shared-utils" "^4.2.2"
 
-"@vue/cli-plugin-vuex@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-vuex/-/cli-plugin-vuex-4.2.1.tgz#8c2bad3816e8ef4ec37bf1981c5aaf013d32b9dc"
-  integrity sha512-949Q5lAIo+s3zMQSfF6GCSYZkehWWcZ/bfEq8gVZYW8T5OG+c3hIGtsmVYRjW0InlDY5I2U9X6lHWNOlfAKvCQ==
+"@vue/cli-plugin-vuex@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-plugin-vuex/-/cli-plugin-vuex-4.2.2.tgz#f504b554e7edde945342e3c42cffad80ffa41933"
+  integrity sha512-/Bir5gCjesHSa+2F2CDD10QefuGJogIJ5VA6wp+zARjDIl4xg2f0SbROnompBS03K7cNNDdRXdS/o/fzKmH1yg==
 
-"@vue/cli-service@4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.2.1.tgz#fae3c594d4fffefcf21a361c90963202cf2b6937"
-  integrity sha512-N7jKhIFiBEfitqQSCAADtGy2CnDcPMsnM4AiSx8pF98+BUwNP+FH3wPWPV8011TiCTAfoEpcRtN7CpdD5D6OKQ==
+"@vue/cli-service@4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-service/-/cli-service-4.2.2.tgz#b2bc820a46c080a7564df23cf7e5c9592d1acc99"
+  integrity sha512-uB+32EoXL3FvgJ/uReDMGT6KohX++qilWN58Dzgi5ixrgD1abQgIjGr9AW5SATwjcWNbU0uKP4FltWq56dxswA==
   dependencies:
     "@intervolga/optimize-cssnano-plugin" "^1.0.5"
     "@soda/friendly-errors-webpack-plugin" "^1.7.1"
-    "@vue/cli-overlay" "^4.2.1"
-    "@vue/cli-plugin-router" "^4.2.1"
-    "@vue/cli-plugin-vuex" "^4.2.1"
-    "@vue/cli-shared-utils" "^4.2.1"
+    "@vue/cli-overlay" "^4.2.2"
+    "@vue/cli-plugin-router" "^4.2.2"
+    "@vue/cli-plugin-vuex" "^4.2.2"
+    "@vue/cli-shared-utils" "^4.2.2"
     "@vue/component-compiler-utils" "^3.0.2"
     "@vue/preload-webpack-plugin" "^1.1.0"
     "@vue/web-component-wrapper" "^1.2.0"
@@ -1593,10 +1593,10 @@
     webpack-dev-server "^3.10.2"
     webpack-merge "^4.2.2"
 
-"@vue/cli-shared-utils@^4.2.1":
-  version "4.2.1"
-  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.2.1.tgz#a7c2a31210733af367cbd097c1146f55bc49d6bc"
-  integrity sha512-0Mj8AZFOn0wJla6QurMa9t5LYLQTfFcEGNYpUXdq6CuA2q/pNCAChJDwKXP1dXpofUHwMFx+FmJAARUvPNya7Q==
+"@vue/cli-shared-utils@^4.2.2":
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.2.2.tgz#953fec34115cb12d0820012a9d7400f8c27d6660"
+  integrity sha512-EK5wcxgjadqUpSzfh6Bnxd46Zx+SAaHusygqV11UZKHr4EObc/SjCpq7c7drmFkBjRqmVvrHs4jRnJJo5VgCgQ==
   dependencies:
     "@hapi/joi" "^15.0.1"
     chalk "^2.4.2"
