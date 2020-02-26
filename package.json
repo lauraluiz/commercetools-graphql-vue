@@ -17,7 +17,7 @@
     "@vue/cli-plugin-babel": "4.2.2",
     "@vue/cli-plugin-eslint": "4.2.2",
     "@vue/cli-service": "4.2.2",
-    "babel-eslint": "10.0.3",
+    "babel-eslint": "10.1.0",
     "eslint": "5.16.0",
     "eslint-plugin-vue": "6.2.1",
     "graphql-tag": "2.10.3",
