@@ -21,7 +21,7 @@
     "eslint": "7.2.0",
     "eslint-plugin-vue": "6.2.2",
     "graphql-tag": "2.10.3",
-    "vue-cli-plugin-apollo": "0.21.3",
+    "vue-cli-plugin-apollo": "0.22.2",
     "vue-template-compiler": "2.6.11"
   },
   "eslintConfig": {
