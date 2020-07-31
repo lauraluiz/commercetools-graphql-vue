@@ -18,7 +18,7 @@
     "@vue/cli-plugin-eslint": "4.4.5",
     "@vue/cli-service": "4.4.5",
     "babel-eslint": "10.1.0",
-    "eslint": "7.5.0",
+    "eslint": "7.6.0",
     "eslint-plugin-vue": "6.2.2",
     "graphql-tag": "2.10.4",
     "vue-cli-plugin-apollo": "0.22.2",
