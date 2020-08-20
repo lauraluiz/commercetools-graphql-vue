@@ -10,7 +10,7 @@
   "dependencies": {
     "@commercetools/sdk-auth": "3.0.8",
     "core-js": "3.6.5",
-    "vue": "2.6.11",
+    "vue": "2.6.12",
     "vue-apollo": "3.0.4"
   },
   "devDependencies": {
@@ -22,7 +22,7 @@
     "eslint-plugin-vue": "6.2.2",
     "graphql-tag": "2.11.0",
     "vue-cli-plugin-apollo": "0.22.2",
-    "vue-template-compiler": "2.6.11"
+    "vue-template-compiler": "2.6.12"
   },
   "eslintConfig": {
     "root": true,
