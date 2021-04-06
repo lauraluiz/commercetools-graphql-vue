@@ -1711,19 +1711,19 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@commercetools/sdk-auth@3.0.11":
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/@commercetools/sdk-auth/-/sdk-auth-3.0.11.tgz#7759041ee426dd625f153a68f10ce9662832ef6b"
-  integrity sha512-ynHiju4rbn9FK7WsfAlAy+jRtGOuo+8h+CH6kmXLRVae9bZHJpCo7zfLdgZXGyERwVlg9VC5SoCPv9Dw43/U5Q==
+"@commercetools/sdk-auth@3.0.12":
+  version "3.0.12"
+  resolved "https://registry.yarnpkg.com/@commercetools/sdk-auth/-/sdk-auth-3.0.12.tgz#6b6930f697f2311beeb909677df08bd5c7f523b8"
+  integrity sha512-t7F71oNK+A23hLGzlEYnjTtqhxDUFST8f4l9YAf7mmVCA9Qeu668pDvJ/kf5gVLMQVazEQM8Vjy4JyyeQctEkQ==
   dependencies:
-    "@commercetools/sdk-middleware-http" "^6.0.10"
+    "@commercetools/sdk-middleware-http" "^6.0.11"
     lodash.defaultsdeep "^4.6.0"
     qss "2.0.3"
 
-"@commercetools/sdk-middleware-http@^6.0.10":
-  version "6.0.10"
-  resolved "https://registry.yarnpkg.com/@commercetools/sdk-middleware-http/-/sdk-middleware-http-6.0.10.tgz#f6fe4d0e4eff93b1b9a6107011b075694144ad11"
-  integrity sha512-b0AjUToR/lYscRyasCw2x1SSDmHkQBGQBr5bz0OOdDmlQ5AslMQ8t+JZofJ6Cpme5yS0S1TD0pDfrx7WtCh00Q==
+"@commercetools/sdk-middleware-http@^6.0.11":
+  version "6.0.11"
+  resolved "https://registry.yarnpkg.com/@commercetools/sdk-middleware-http/-/sdk-middleware-http-6.0.11.tgz#0ca16cefe881b68c1d2b77ddbd3a48733a5ee062"
+  integrity sha512-9Keb5rv6fvdA9qdehBEjk/JMrAzlBbg76TodsvhCZZZteaO0+ybjFgtV0ekdGyI4awxOxgsiPDZrTmQNvnI5Wg==
 
 "@endemolshinegroup/cosmiconfig-typescript-loader@^1.0.0":
   version "1.0.1"
